@@ -1,0 +1,29 @@
+{
+    "name": "6.10",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "dependencies": {
+        "@tailwindcss/vite": "^4.0.9",
+        "icons": "^1.0.0",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "react-hot-toast": "^2.5.2",
+        "react-icons": "^5.5.0",
+        "react-router-dom": "^7.2.0",
+        "tailwindcss": "^4.0.9",
+        "toastify": "^2.0.1"
+    },
+    "devDependencies": {
+        "@types/react": "^18.3.18",
+        "@types/react-dom": "^18.3.5",
+        "@vitejs/plugin-react": "^4.3.4",
+        "daisyui": "^5.0.0-beta.9",
+        "globals": "^15.14.0",
+        "vite": "^6.0.5"
+    }
+}
