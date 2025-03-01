@@ -1,2 +1,21 @@
 @import "tailwindcss";
 @plugin "daisyui";
+@layer components {
+    .main-container {
+        @apply max-w-6xl px-4 mx-auto;
+    }
+}
+
+body,
+html,
+#root {
+    @apply h-full;
+}
+
+#root {
+    @apply flex flex-col;
+}
+
+main {
+    @apply grow;
+}

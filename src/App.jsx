@@ -8,6 +8,8 @@ import Error from "./pages/Error";
 
 // layouts
 import MainLayout from "./layouts/MainLayout";
+// import Product from "./components/Product";
+import Product from "./pages/Product";
 
 function App() {
   const router = createBrowserRouter([
@@ -19,6 +21,14 @@ function App() {
         {
           index: true,
           element: <Home />,
+        },
+        // {
+        //   path: "/cart",
+        //   element: <Cart />,
+        // },
+        {
+          path: "/product/:id",
+          element: <Product />,
         },
       ],
     },

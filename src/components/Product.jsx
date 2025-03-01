@@ -13,7 +13,7 @@ function Product({ product }) {
     >
       <div className="flex justify-end">
         <Link className="flex justify-end">
-          <FaRegHeart className="focus:fill-red-600" />
+          <FaRegHeart className="hover:fill-red-600" />
         </Link>
       </div>
       <div className="flex flex-col items-center gap-2.5">
