@@ -14,9 +14,9 @@ function Product({ product }) {
       to={`/product/${product.id}`}
     >
       <div className="flex justify-end">
-        <Link className="flex justify-end">
-          <FaRegHeart className="hover:fill-red-600" />
-        </Link>
+        {/* <Link className="flex justify-end"> */}
+        <FaRegHeart className="hover:fill-red-600" />
+        {/* </Link> */}
       </div>
       <div className="flex flex-col items-center gap-2.5">
         <img
@@ -32,9 +32,9 @@ function Product({ product }) {
           <p className="text-sm line-through opacity-60">{product.price}</p>
           <p className="text-xl font-bold">{discountedPrice.toFixed(2)}</p>
         </div>
-        <Link to={"/cart"}>
-          <SlBag className="text-2xl" />
-        </Link>
+        {/* <Link to={"/cart"}> */}
+        <SlBag className="text-2xl" />
+        {/* </Link> */}
       </div>
       <button
         onClick={(e) => {
