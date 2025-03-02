@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 
 import { SlBag } from "react-icons/sl";
@@ -40,19 +39,17 @@ function Product({ product }) {
           <p className="text-xl font-bold">{discountedPrice.toFixed(2)}</p>
         </div>
 
-        <button className="btn border-0 bg-inherit">
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            dispatch({ type: "ADD_PRODUCT", payload: product });
+          }}
+          className="btn border-0 bg-inherit"
+        >
           <SlBag className="text-2xl" />
         </button>
       </div>
-      <button
-        onClick={(e) => {
-          e.preventDefault();
-          dispatch({ type: "ADD_PRODUCT", payload: product });
-        }}
-        className="btn btn-secondary btn-sm"
-      >
-        Add
-      </button>
+
       <button
         onClick={(e) => {
           e.preventDefault();

@@ -5,7 +5,10 @@ import ProductsList from "../components/ProductsList";
 function Home() {
   const { data, isPending, error } = useFetch("https://dummyjson.com/product");
   console.log(data);
-  if (isPending) return <h2>Loading...</h2>;
+  if (isPending)
+    return (
+      <span className="loader flex items-center justify-center absolute top-1/2 left-1/2"></span>
+    );
   if (error)
     return (
       <div role="alert" className="alert alert-error">
