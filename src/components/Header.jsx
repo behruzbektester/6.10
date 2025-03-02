@@ -51,7 +51,7 @@ export default function Header() {
             <MenuLinks />
           </ul>
         </div>
-        <div className="navbar-end flex gap-1.5">
+        <div className="navbar-end flex gap-3.5">
           <Link to={"/cart"}>
             <FaShoppingCart className="text-2xl" />
           </Link>
@@ -59,7 +59,7 @@ export default function Header() {
             onClick={() => setDarkMode(!darkMode)}
             className="p-2 rounded-lg bg-none dark:bg-gray-800 text-black dark:text-white"
           >
-            <FaMoon />
+            <FaMoon className="hover:cursor-pointer" />
           </button>
         </div>
       </nav>

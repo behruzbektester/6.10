@@ -11,7 +11,7 @@ function Product({ product }) {
   const { dispatch } = useGlobalContext();
   return (
     <Link
-      className="flex flex-col gap-2 mx-2.5 my-2.5 border p-4 rounded-lg shadow-md hover:shadow-2xl transition main-container"
+      className="flex flex-col gap-2 mx-2.5 my-2.5 border p-4 rounded-lg shadow-md hover:shadow-2xl transition main-container bg-base-200"
       to={`/product/${product.id}`}
     >
       <div className="flex justify-end">
@@ -21,7 +21,7 @@ function Product({ product }) {
             e.preventDefault();
           }}
         >
-          <FaHeart className="hover:fill-red-500 hover:stroke-0 cursor-pointer fill-white stroke-black stroke-30 w-full" />
+          <FaHeart className="active:fill-red-500 active:stroke-red-500 cursor-pointer fill-white stroke-black stroke-30 w-full" />
         </button>
       </div>
       <div className="flex flex-col items-center gap-2.5">

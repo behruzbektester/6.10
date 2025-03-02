@@ -5,17 +5,18 @@ function Error() {
 
   if (error.status == 404) {
     return (
-      <div className="error-container container">
-        <div>
-          <h3>
-            404 Error: Page not found. But don't worry, our developers are on a
-            treasure hunt to recover it. Meanwhile, enjoy some virtual tea and
-            biscuits!
+      <div className="mt-80">
+        <div className="text-center">
+          <h2 className="text-4xl text-center">404 ERROR:</h2>
+          <h3 className="text-xl">
+            This page does not exist at the moment. Don't worry, this page will
+            be added as soon as it is ready ☺️.
           </h3>
           <Link to="/" className="btn">
-            Go To Home
+            Go Home
           </Link>
         </div>
+        <span className="loader-setting "></span>
       </div>
     );
   }
