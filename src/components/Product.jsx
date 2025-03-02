@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaRegHeart } from "react-icons/fa";
+// import { FaRegHeart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
+
 import { SlBag } from "react-icons/sl";
 import { useGlobalContext } from "../hooks/useGlobalContext";
 
@@ -14,9 +16,14 @@ function Product({ product }) {
       to={`/product/${product.id}`}
     >
       <div className="flex justify-end">
-        {/* <Link className="flex justify-end"> */}
-        <FaRegHeart className="hover:fill-red-600" />
-        {/* </Link> */}
+        <button
+          className="w-5"
+          onClick={(e) => {
+            e.preventDefault();
+          }}
+        >
+          <FaHeart className="hover:fill-red-600 cursor-pointer fill-white stroke-black stroke-30 w-full" />
+        </button>
       </div>
       <div className="flex flex-col items-center gap-2.5">
         <img
@@ -32,9 +39,10 @@ function Product({ product }) {
           <p className="text-sm line-through opacity-60">{product.price}</p>
           <p className="text-xl font-bold">{discountedPrice.toFixed(2)}</p>
         </div>
-        {/* <Link to={"/cart"}> */}
-        <SlBag className="text-2xl" />
-        {/* </Link> */}
+
+        <button className="btn border-0 bg-inherit">
+          <SlBag className="text-2xl" />
+        </button>
       </div>
       <button
         onClick={(e) => {
