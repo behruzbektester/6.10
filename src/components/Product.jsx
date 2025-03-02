@@ -21,7 +21,7 @@ function Product({ product }) {
             e.preventDefault();
           }}
         >
-          <FaHeart className="hover:fill-red-600 cursor-pointer fill-white stroke-black stroke-30 w-full" />
+          <FaHeart className="hover:fill-red-500 hover:stroke-0 cursor-pointer fill-white stroke-black stroke-30 w-full" />
         </button>
       </div>
       <div className="flex flex-col items-center gap-2.5">
