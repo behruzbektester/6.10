@@ -8,6 +8,7 @@ function Product() {
     `https://dummyjson.com/product/${id}`
   );
   console.log(id);
+  console.log(data);
   return (
     <div>
       <img className="h-64 object-contain" src={images[0]} alt={title} />
