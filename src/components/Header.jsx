@@ -4,23 +4,13 @@ import { FaShoppingCart } from "react-icons/fa";
 import MenuLinks from "./MenuLinks";
 import { useState, useEffect } from "react";
 import { FaMoon } from "react-icons/fa";
+import { useTheme } from "../hooks/useTheme";
+import { FaSun } from "react-icons/fa";
 
 export default function Header() {
-  const data = useGlobalContext();
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem("theme") === "dark";
-  });
-  console.log(data);
+  const { totalAmount, data } = useGlobalContext();
+  const { changeTheme, currentTheme } = useTheme();
 
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [darkMode]);
   return (
     <header className="bg-base-200 mb-5">
       <nav className="navbar main-container">
@@ -28,7 +18,6 @@ export default function Header() {
           <Link className="btn btn-primary hidden md:flex" to={"/"}>
             <span className="text-xl md:text-2xl">Ituzum</span>
           </Link>
-
           <button
             className="btn btn-primary flex md:hidden"
             popovertarget="popover-1"
@@ -52,15 +41,26 @@ export default function Header() {
           </ul>
         </div>
         <div className="navbar-end flex gap-3.5">
-          <Link to={"/cart"}>
-            <FaShoppingCart className="text-2xl" />
-          </Link>
-          <button
-            onClick={() => setDarkMode(!darkMode)}
-            className="p-2 rounded-lg bg-none dark:bg-gray-800 text-black dark:text-white"
-          >
-            <FaMoon className="hover:cursor-pointer" />
-          </button>
+          <div className="indicator">
+            <span className="indicator-item badge badge-xs badge-primary text-sm">
+              {totalAmount}
+            </span>
+            <Link to={"/cart"}>
+              <FaShoppingCart className="text-2xl" />
+            </Link>
+          </div>
+
+          <label className="swap swap-rotate">
+            {/* this hidden checkbox controls the state */}
+            <input
+              type="checkbox"
+              onChange={changeTheme}
+              defaultChecked={currentTheme == "dark"}
+            />
+            <FaSun className="swap-on h-5 w-5 fill-current" />
+
+            <FaMoon className="swap-off h-5 w-5 fill-current" />
+          </label>
         </div>
       </nav>
     </header>

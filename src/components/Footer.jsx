@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -6,7 +7,7 @@ export default function Footer() {
       <aside>
         <p>
           Copyright © {new Date().getFullYear()} - All right reserved by
-          Behruzbek
+          <Link to={"https://github.com/behruzbektester"}>Behruzbek</Link>
         </p>
       </aside>
     </footer>

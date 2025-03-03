@@ -1,17 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaHeart } from "react-icons/fa";
-
+import { toast } from "react-toastify";
 import { SlBag } from "react-icons/sl";
 import { useGlobalContext } from "../hooks/useGlobalContext";
 
 function Product({ product }) {
   const discountedPrice =
     product.price - (product.price * product.discountPercentage) / 100;
-  const { dispatch } = useGlobalContext();
+  const { dispatch, products } = useGlobalContext();
+  const addProduct = (e, product) => {
+    e.preventDefault();
+
+    const item = products.find((p) => p.id == product.id);
+
+    if (item) {
+      toast.warn("Already added");
+      return;
+    }
+    toast.success("Product added");
+
+    dispatch({
+      type: "ADD_PRODUCT",
+      payload: { ...product, amount: 1 },
+    });
+  };
   return (
     <Link
-      className="flex flex-col gap-2 mx-2.5 my-2.5 border p-4 rounded-lg shadow-md hover:shadow-2xl transition main-container bg-base-200"
+      className="flex flex-col gap-2 mx-2.5 my-2.5 border p-4 rounded-lg shadow-md hover:shadow-2xl transition main-container bg-base-200 mb-16"
       to={`/product/${product.id}`}
     >
       <div className="flex justify-end">
@@ -41,8 +57,7 @@ function Product({ product }) {
 
         <button
           onClick={(e) => {
-            e.preventDefault();
-            dispatch({ type: "ADD_PRODUCT", payload: product });
+            addProduct(e, product);
           }}
           className="btn border-0 bg-inherit"
         >
