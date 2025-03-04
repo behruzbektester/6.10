@@ -27,7 +27,7 @@ function Product({ product }) {
   };
   return (
     <Link
-      className="flex flex-col gap-2 mx-2.5 my-2.5 border p-4 rounded-lg shadow-md hover:shadow-2xl transition main-container bg-base-200 mb-16"
+      className=" group card flex flex-col gap-2 mx-2.5 my-2.5 border p-4 rounded-lg shadow-md hover:shadow-2xl transition main-container bg-base-200 mb-16"
       to={`/product/${product.id}`}
     >
       <div className="flex justify-end">
@@ -42,7 +42,7 @@ function Product({ product }) {
       </div>
       <div className="flex flex-col items-center gap-2.5">
         <img
-          className="h-64 object-contain"
+          className="h-64 object-contain group-hover:scale-[1.1] transition duration-300"
           src={product.images[0]}
           alt={product.title}
         />
@@ -59,21 +59,11 @@ function Product({ product }) {
           onClick={(e) => {
             addProduct(e, product);
           }}
-          className="btn border-0 bg-inherit"
+          className="btn btn-secondary"
         >
           <SlBag className="text-2xl" />
         </button>
       </div>
-
-      <button
-        onClick={(e) => {
-          e.preventDefault();
-          dispatch({ type: "DELETE_PRODUCT", payload: product.id });
-        }}
-        className="btn btn-secondary btn-sm"
-      >
-        Delete
-      </button>
     </Link>
   );
 }

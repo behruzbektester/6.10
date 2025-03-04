@@ -15,8 +15,15 @@ export default function Header() {
     <header className="bg-base-200 mb-5">
       <nav className="navbar main-container">
         <div className="navbar-start">
-          <Link className="btn btn-primary hidden md:flex" to={"/"}>
-            <span className="text-xl md:text-2xl">Ituzum</span>
+          <Link
+            className="btn btn-square hover:opacity-80 hidden md:flex"
+            to={"/"}
+          >
+            <img
+              className="max-w-13 rounded"
+              src="/ituzum-logo.png"
+              alt="logo"
+            />
           </Link>
           <button
             className="btn btn-primary flex md:hidden"

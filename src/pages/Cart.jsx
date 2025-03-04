@@ -49,10 +49,7 @@ export default function Cart() {
                     <div className="flex items-center gap-3">
                       <div className="avatar">
                         <div className="mask mask-squircle h-14 w-14">
-                          <img
-                            src={product.images[0]}
-                            alt="Avatar Tailwind CSS Component"
-                          />
+                          <img src={product.thumbnail} alt={product.title} />
                         </div>
                       </div>
                       <div>

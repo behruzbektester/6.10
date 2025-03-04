@@ -3,7 +3,9 @@ import useFetch from "../hooks/useFetch";
 import ProductsList from "../components/ProductsList";
 
 function Home() {
-  const { data, isPending, error } = useFetch("https://dummyjson.com/product");
+  const { data, isPending, error } = useFetch(
+    "https://dummyjson.com/product?limit=200"
+  );
   console.log(data);
   if (isPending)
     return (
@@ -31,7 +33,7 @@ function Home() {
   return (
     <section className="main-container">
       <h2 className="text-4xl font-bold mb-5">Products</h2>
-      {data && <ProductsList className="bg-red" products={data.products} />}
+      {data && <ProductsList products={data.products} />}
     </section>
   );
 }
