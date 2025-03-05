@@ -1,16 +1,21 @@
-import { useEffect, useState } from "react";
+import { useEffect, useReducer } from "react";
 
 const getThemeFromLocal = () => {
   return localStorage.getItem("theme") || "light";
 };
 
+const themeReducer = (state) => {
+  return state === "dark" ? "light" : "dark";
+};
+
 export function useTheme() {
-  const [currentTheme, setCurrentTheme] = useState(getThemeFromLocal());
+  const [currentTheme, dispatch] = useReducer(
+    themeReducer,
+    getThemeFromLocal()
+  );
 
   const changeTheme = () => {
-    setCurrentTheme((prev) => {
-      return prev == "dark" ? "light" : "dark";
-    });
+    dispatch();
   };
 
   useEffect(() => {

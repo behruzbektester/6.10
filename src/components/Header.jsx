@@ -2,7 +2,6 @@ import { useGlobalContext } from "../hooks/useGlobalContext";
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import MenuLinks from "./MenuLinks";
-import { useState, useEffect } from "react";
 import { FaMoon } from "react-icons/fa";
 import { useTheme } from "../hooks/useTheme";
 import { FaSun } from "react-icons/fa";
